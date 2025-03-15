@@ -54,6 +54,33 @@ void deleteheap(){
     }
     
 }
+void heapify(int arr[], int size,int index){
+    int largest=index;
+    int lefti=2*index;
+    int righti=2*index+1;
+
+    if(lefti<=size && arr[largest]<arr[lefti] ){
+        largest=lefti;
+    }
+    if(righti<=size && arr[largest]<arr[righti]){
+        largest=righti;
+    }
+    if(largest!=index){
+        swap(arr[index],arr[largest]);
+        heapify(arr,size,largest);
+    }   
+
+}
+void heapsort(int arr[],int size, int index){
+    
+    while(size>1){
+        swap(arr[1],arr[size]);
+        size--;
+        heapify(arr,size,1);
+        
+    }
+
+}
 
 void print(){
     for (int i=1;i<=size;i++){
@@ -73,5 +100,23 @@ int main(){
     h.deleteheap();
     cout<<" "<<endl;
     h.print();
+
+    int arr[6]={-1,54,53,55,52,50};
+    int n=5;
+
+    for(int i=n/2; i>0;i--){
+        h.heapify(arr,n,i);
+    }
+    cout<<" print array now"<<endl;
+    for(int i=1;i<=n;i++){
+        cout<<arr[i]<<" ";
+    }cout<<endl;
+
+    h.heapsort(arr,n,1);
+    cout<<" print array now"<<endl;
+    for(int i=1;i<=n;i++){
+        cout<<arr[i]<<" ";
+    }cout<<endl;
+
     return 0;
 }
