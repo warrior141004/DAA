@@ -28,23 +28,23 @@ void insert(int val){
 }
 void deleteheap(){
     if (size==0){
-        cout<<"nothing to delete";
+        cout<<"nothing to delete" << endl;
         return;
 
     }
-    arr[1]==arr[size];
+    arr[1]=arr[size];
     size--;
 
     int i=1;
-    while(i<size){
+    while(true){
         int lefti=2*i;
         int righti=2*i+1;
 
-        if(lefti<size && arr[i]<arr[lefti]){
+        if(lefti<=size && arr[i]<arr[lefti]){
             swap(arr[i],arr[lefti]);
             i=lefti;
 
-        }else if(righti<size && arr[i]<arr[righti]){
+        }else if(righti<=size && arr[i]<arr[righti]){
             swap(arr[i],arr[righti]);
             i=righti;
         }else{
@@ -52,11 +52,9 @@ void deleteheap(){
         }
 
     }
-    return deleteheap();
-}
-void storesortheap() {
     
 }
+
 void print(){
     for (int i=1;i<=size;i++){
         cout<<arr[i]<<" ";   }}
