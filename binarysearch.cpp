@@ -16,7 +16,7 @@ void binarysearch(int x, vector<int>& arr, int size){
             j = mid - 1;
         }
     }
-    cout << "Element not found" << endl; // Added message for element not found
+    cout << "Element not found" << endl; 
 }
 
 int main() {
