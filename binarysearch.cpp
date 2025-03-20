@@ -15,7 +15,7 @@ void binarysearch(int x, vector<int>& arr, int size){
     int i = 0;
     int j = size - 1;
     while (i <= j) {
-        int mid = i + (j - i) / 2; // Corrected the calculation of mid
+        int mid = i + (j - i) / 2; 
         if (arr[mid] == x) {
             cout << "Element found at index " << mid << endl;
             return;
